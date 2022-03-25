@@ -208,6 +208,9 @@ fabric.properties
 .history
 .ionide
 
+.mvn/*
+mvnw.cmd
+mvnw
 # Support for Project snippet scope
 
 # End of https://www.toptal.com/developers/gitignore/api/intellij+all,visualstudiocode,eclipse
