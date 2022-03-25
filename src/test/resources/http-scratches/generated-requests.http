@@ -1,0 +1,134 @@
+###
+GET http://localhost:8080/author
+
+<> 2022-02-22T212923.404.html
+
+###
+GET http://localhost:8080/
+
+<> 2022-03-10T171337.200.txt
+<> 2022-03-10T171113.200.txt
+<> 2022-03-10T170921.200.txt
+
+###
+GET http://localhost:8080/
+
+###
+GET http://localhost:8080/
+//Authorization: Basic {{username}} {{password}}
+
+###
+GET http://localhost:8080/api/v1/students/2
+Authorization: Basic {{username1}} {{password1}}
+
+###
+GET http://localhost:8080/api/v1/students/2
+Authorization: Basic {{username2}} {{password2}}
+
+###
+GET http://localhost:8080/api/v1/admin/students
+Authorization: Basic {{username2}} {{password2}}
+
+<> 2022-03-22T162224.200.json
+
+
+###
+GET http://localhost:8080/api/v1/admin/students
+Authorization: Basic {{username3}} {{password2}}
+
+<> 2022-03-22T162245.200.json
+<> 2022-03-22T155646.200.json
+
+
+###
+POST http://localhost:8080/api/v1/admin/students
+Content-Type: application/json
+Authorization: Basic {{username2}} {{password2}}
+
+{
+  "id": 5,
+  "name": "Basil Bond"
+}
+
+<> 2022-03-22T155746.400.json
+
+
+###
+POST http://localhost:8080/api/v1/admin/students
+Content-Type: application/json
+Authorization: Basic {{username3}} {{password2}}
+
+{
+  "id": 6,
+  "name": "Tom Bond"
+}
+
+<> 2022-03-22T162256.403.json
+<> 2022-03-22T155927.403.json
+
+###
+PUT http://localhost:8080/api/v1/admin/students/1
+Content-Type: application/json
+Authorization: Basic {{username2}} {{password2}}
+
+{
+  "id": 1,
+  "name": "ZZJames Bondzz"
+}
+
+
+###
+PUT http://localhost:8080/api/v1/admin/students/1
+Content-Type: application/json
+Authorization: Basic {{username3}} {{password2}}
+
+{
+  "id": 1,
+  "name": "ZZJames Bondzz"
+}
+
+<> 2022-03-22T160030.403.json
+
+###
+DELETE http://localhost:8080/api/v1/admin/students/1
+Authorization: Basic {{username2}} {{password2}}
+
+
+###
+DELETE http://localhost:8080/api/v1/admin/students/1
+Authorization: Basic {{username3}} {{password2}}
+
+<> 2022-03-22T162116.403.json
+<> 2022-03-22T160103.403.json
+
+
+###
+POST http://localhost:8080/login
+Content-Type: application/json
+
+{
+  "username": "linda",
+  "password": "password123"
+}
+
+
+### Authorization by token, part 2. Use token to authorize.
+GET http://localhost:8080/api/v1/admin/students
+Authorization: Bearer {{token}}
+
+<> 2022-03-24T231544.200.json
+<> 2022-03-24T230954.405.json
+<> 2022-03-24T230920.405.json
+<> 2022-03-24T230749.405.json
+<> 2022-03-24T213230.200.json
+
+
+### Authorization by token, part 2. Use token to authorize.
+GET http://localhost:8080/api/v1/admin/students/1
+Authorization: Bearer {{token}}
+
+<> 2022-03-24T231150.405.json
+<> 2022-03-24T212715.405.json
+<> 2022-03-24T212612.405.json
+<> 2022-03-24T212432.405.json
+
